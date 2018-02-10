@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import { test } from './Grpc';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -28,11 +29,16 @@ interface State {
 }
 
 export default class App extends Component<Props, State> {
+  componentDidMount() {
+    console.log('111');
+    test();
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!TS version is welcome;
+          Welcome to React Native!TS version;
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js
